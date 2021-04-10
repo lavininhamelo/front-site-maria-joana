@@ -1,8 +1,10 @@
 <template>
   <q-page class="flex flex-center column ">
     <Header></Header>
+    <Separator bottom></Separator>
     <Products></Products>
     <Courses></Courses>
+    <Separator></Separator>
     <Contact></Contact>
   </q-page>
 </template>
@@ -12,6 +14,7 @@ import Header from "../components/Header";
 import Products from "../components/Products";
 import Courses from "../components/Courses";
 import Contact from "../components/Contact";
+import Separator from "../components/Separator.vue";
 
 export default {
   name: "PageIndex",
@@ -19,7 +22,8 @@ export default {
     Header,
     Products,
     Courses,
-    Contact
+    Contact,
+    Separator
   },
   data() {
     return {};
