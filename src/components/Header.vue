@@ -1,9 +1,45 @@
 <template>
-  <div></div>
+  <header>
+    <h1>Maria Joana</h1>
+    <img src="~/assets/linha.png" alt="linha" />
+    <span>Dança e artesanato</span>
+    <div class="botao-catalogo">
+      <q-btn class="botao" color="primary" label="Ver Catálogo" />
+    </div>
+    <Separator bottom></Separator>
+  </header>
 </template>
 
 <script>
-export default {};
+import Separator from "./Separator.vue";
+export default {
+  components: { Separator }
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.botao {
+  width: 305px;
+  margin: 24px 0px;
+}
+span {
+  color: $secondary;
+  font-family: "Roboto", Fallback, sans-serif;
+  margin: 16px 0px;
+}
+header {
+  padding: 36px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $beige;
+}
+h1 {
+  color: $secondary;
+  font-family: "Mine", Fallback, sans-serif;
+  margin-bottom: 0px;
+  font-size: 64px;
+}
+</style>

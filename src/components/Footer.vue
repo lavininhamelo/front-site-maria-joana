@@ -1,6 +1,4 @@
-<template>
-  <h2>Footer</h2>
-</template>
+<template> </template>
 
 <script>
 export default {};

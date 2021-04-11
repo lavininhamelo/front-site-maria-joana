@@ -1,1 +1,9 @@
 // app global css in SCSS form
+.container {
+  padding: 0px 10%;
+}
+
+@font-face {
+  font-family: "Mine";
+  src: url("~assets/ANNAI.ttf");
+}

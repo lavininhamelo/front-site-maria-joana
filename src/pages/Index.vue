@@ -1,7 +1,6 @@
 <template>
   <q-page class="flex flex-center column ">
     <Header></Header>
-    <Separator bottom></Separator>
     <Products></Products>
     <Courses></Courses>
     <Separator></Separator>

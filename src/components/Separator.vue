@@ -16,7 +16,6 @@ export default {
 .bottom {
   width: 100vw;
   height: 100px;
-  background-color: red;
   background: url("~assets/bottom.svg");
   background-size: cover;
   background-position-y: bottom;
@@ -24,7 +23,6 @@ export default {
 .top {
   width: 100vw;
   height: 100px;
-  background-color: red;
   background: url("~assets/top.svg");
   background-size: cover;
   background-position-y: top;
