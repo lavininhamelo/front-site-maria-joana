@@ -28,7 +28,7 @@ span {
   margin: 16px 0px;
 }
 header {
-  padding: 36px 0;
+  padding-top: 36px;
   width: 100%;
   display: flex;
   flex-direction: column;

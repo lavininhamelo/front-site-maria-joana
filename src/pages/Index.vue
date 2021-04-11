@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center column ">
+  <q-page class="flex flex-center column index">
     <Header></Header>
     <Products></Products>
     <Courses></Courses>
@@ -29,4 +29,8 @@ export default {
   }
 };
 </script>
-<style scoped></style>
+<style scoped>
+.index {
+  width: 100%;
+}
+</style>
