@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <h2>About</h2>
-  </div>
+  <q-page class="flex flex-center column about">
+      <Abouther></Abouther>
+  </q-page>
 </template>
 
 <script>
-export default {};
+import Abouther from 'src/components/Abouther.vue';
+export default {
+  components: { Abouther },};
 </script>
 
 <style lang="scss" scoped></style>
