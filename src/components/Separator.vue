@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .bottom {
-  width: 100vw;
+  width: 100%;
   height: 100px;
   background: url("~assets/bottom.svg");
   background-size: 100%;
@@ -30,7 +30,7 @@ export default {
   background-repeat: no-repeat;
 }
 .top {
-  width: 100vw;
+  width: 100%;
   height: 100px;
   background: url("~assets/top.svg");
   background-size: 100%;

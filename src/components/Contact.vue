@@ -73,17 +73,18 @@ export default {
 <style lang="scss" scoped>
 .contact-body {
   background-color: $beige;
-
   background-image: url("~assets/bg_contact.svg");
   background-repeat: no-repeat;
   background-size: contain;
-
   background-position-y: bottom;
 }
+
 .contato {
-  height: 600px;
+  min-height: 600px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .whatsapp {
@@ -91,10 +92,12 @@ export default {
   flex: 1;
   flex-direction: column;
   align-items: center;
+  min-width: 320px;
 }
 
 .email {
   flex: 1;
+  min-width: 320px;
 }
 
 h2 {
