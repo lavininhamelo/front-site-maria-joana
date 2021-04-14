@@ -3,7 +3,7 @@
     <h1>Maria Joana</h1>
     <img src="~/assets/linha.png" alt="linha" />
     <span>Dança e artesanato</span>
-    <div class="botao-catalogo">
+    <div class="botao-catalogo" @click="go('/produtos')">
       <q-btn class="botao" color="primary" label="Ver Catálogo" />
     </div>
     <Separator bottom></Separator>
@@ -13,7 +13,12 @@
 <script>
 import Separator from "./Separator.vue";
 export default {
-  components: { Separator }
+  components: { Separator },
+  methods: {
+    go(value) {
+      this.$router.push(value);
+    }
+  }
 };
 </script>
 

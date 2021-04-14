@@ -5,7 +5,7 @@
       <h2>{{ title || "Titulo" }}</h2>
       <img src="~/assets/direita.svg" alt="seta-direita" />
     </div>
-    <h3>{{ subtitle ? subtitle : "" }}</h3>
+    <span>{{ subtitle ? subtitle : "" }}</span>
   </div>
 </template>
 <script>
@@ -37,7 +37,7 @@ h2 {
   font-family: "Slabo 13px", serif;
 }
 
-h3 {
+span {
   font-family: "Nanum Pen Script", cursive;
   margin: 0px;
   padding: 0px;

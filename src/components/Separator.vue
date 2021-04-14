@@ -1,5 +1,9 @@
 <template>
-  <div :class="bottom ? 'top' : 'bottom'"></div>
+  <div
+    :style="`background-color: ${color}`"
+    class="separator"
+    :class="bottom ? 'top' : 'bottom'"
+  ></div>
 </template>
 <script>
 export default {
@@ -7,6 +11,10 @@ export default {
     bottom: {
       type: Boolean,
       default: false
+    },
+    color: {
+      type: String,
+      required: false
     }
   }
 };
@@ -17,14 +25,15 @@ export default {
   width: 100vw;
   height: 100px;
   background: url("~assets/bottom.svg");
-  background-size: cover;
+  background-size: 100%;
   background-position-y: bottom;
+  background-repeat: no-repeat;
 }
 .top {
   width: 100vw;
   height: 100px;
   background: url("~assets/top.svg");
-  background-size: cover;
+  background-size: 100%;
   background-position-y: top;
 }
 </style>

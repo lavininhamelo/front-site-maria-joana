@@ -1,15 +1,17 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <div class="flex w-full column justify-center ">
-      <!-- <iframe
-        src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3"
-        :width="getScreenSize()"
-        height="70"
-        frameborder="0"
-        allowtransparency="true"
-        allow="encrypted-media"
-      ></iframe> -->
-      <Menu />
+      <div class="top  w-full">
+        <iframe
+          src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3"
+          :width="getScreenSize()"
+          height="70"
+          frameborder="0"
+          allowtransparency="true"
+          allow="encrypted-media"
+        ></iframe>
+        <Menu class="menu" />
+      </div>
       <q-page-container>
         <router-view />
       </q-page-container>
@@ -54,11 +56,22 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .whatsapp {
   margin: 32px;
   position: fixed;
   bottom: 0;
   right: 0;
+}
+
+.top {
+  z-index: 99;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+
+  .menu {
+    margin-top: -6px;
+  }
 }
 </style>

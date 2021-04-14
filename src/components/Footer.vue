@@ -1,75 +1,93 @@
 <template>
-  <div class="footer">
-    <footer>
+  <footer class="column">
+    <div class="footer container">
       <div class="itemFooter">
-        <div class="items">
-          <ul class="link">
-            <li>Ínicio</li>
-            <li>Sobre</li>
-            <li>Produtos</li>
-            <li>Cursos</li>
-            <li>Contato</li>
-          </ul>
+        <div class="logoItem" @click="go('/')">
+          <img src="~/assets/SVG/logo.svg" alt="logo" />
         </div>
-        <div class="logo">
-          <img src="~/assets/logo.png" alt="logo" />
-        </div>
-        <div class="whatasapp"><strong>Whatasapp</strong> (67) 9 9845-6657</div>
+        <ul class="link">
+          <li @click="go('/')">Início</li>
+          <li @click="go('/sobre')">Sobre</li>
+          <li @click="go('/produtos')">Produtos</li>
+          <li @click="go('/cursos')">Cursos</li>
+          <router-link to="#contact" @click.native="scrollFix('#contact')">
+            <li>Contato</li></router-link
+          >
+        </ul>
+        <span></span>
       </div>
-      <div class="texto">
-        <strong>Maria Joana </strong>- Todos os direitos reservados &copy; 2021
-      </div>
-    </footer>
-  </div>
+    </div>
+    <div class="texto ">
+      <strong>Maria Joana </strong> - Todos os direitos reservados &copy; 2021
+    </div>
+  </footer>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    scrollFix: function(hashbang) {
+      location.href = hashbang;
+    },
+    go(value) {
+      this.$router.push(value);
+    },
+    refresh() {
+      this.$router.go("/");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-.footer {
-  background-color: #64743f;
+footer {
+  background-color: $lemon-light;
+}
 
-  .texto {
-    background-color: #1f2413;
-    color: #fffdfd;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    display: flex;
-  }
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.texto {
+  background-color: $lemon;
+  color: #fffdfd;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  display: flex;
+}
+.footer {
+  // background-color: #64743f;
 
   .itemFooter {
-    background-color: #64743f;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    margin-left: 60px;
-    margin-right: 60px;
+    align-items: center;
+    padding: 24px 0;
 
-    .items {
+    .link {
       display: flex;
-      flex-direction: column;
-      color: #fffdfd;
+      flex-direction: row;
+      width: 500px;
+      justify-content: space-between;
     }
 
     ul {
+      cursor: pointer;
+      padding: 0px;
       li {
+        font-size: 16px;
+        font-family: "Slabo 13px", serif;
+        color: #fffdfd;
         list-style-type: none;
       }
     }
 
     .logo {
-      align-self: center;
-      width: 60px;
-      height: 60px;
-      margin-top: 30px;
-    }
-
-    .whatasapp {
-      color: #fffdfd;
-      align-self: center;
+      width: 30px;
+      height: 30px;
+      margin-top: 35px;
     }
   }
 }

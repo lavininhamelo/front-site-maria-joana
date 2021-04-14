@@ -1,10 +1,10 @@
 <template>
   <q-page class="flex flex-center column index">
-    <Header></Header>
+    <Header id="header"></Header>
     <Products></Products>
     <Courses></Courses>
-    <Separator></Separator>
-    <Contact></Contact>
+    <Separator color="#fcf6ec"></Separator>
+    <Contact id="contact" />
   </q-page>
 </template>
 
