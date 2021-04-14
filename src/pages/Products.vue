@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full column items-center container q-mt-lg">
+  <div class="w-full column items-center container q-pb-lg bg">
     <Title :title="'Produtos'" class="q-mt-lg" />
     <div class="row full-width justify-center q-my-lg">
       <div class="q-px-lg " v-for="(card, index) in 30" :key="index">
-        <Card title="Lorem ipsum"> </Card>
+        <Card :name="`Produto Random ${index}`" :value="'R$ 23,00'"> </Card>
       </div>
     </div>
   </div>
@@ -20,4 +20,8 @@ export default {
 };
 </script>
 
-<style l Titleang="scss" scoped></style>
+<style lang="scss" scoped>
+.bg {
+  background: $beige;
+}
+</style>
