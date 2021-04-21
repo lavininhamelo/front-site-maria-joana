@@ -17,6 +17,7 @@
         src="~/assets/admin.png"
         alt="Seção de Admin"
         class="admin"
+        @click="$router.push('/admin')"
         height="18"
       />
       <img src="~/assets/whatsapp.png" alt="Whatsapp" height="18" />

@@ -2,7 +2,7 @@
   <div class="title">
     <div class="row no-wrap items-center">
       <img src="~/assets/esquerda.svg" alt="seta-esquerda" />
-      <h2>{{ title || "Titulo" }}</h2>
+      <h2 >{{ title || "Titulo" }}</h2>
       <img src="~/assets/direita.svg" alt="seta-direita" />
     </div>
     <span>{{ subtitle ? subtitle : "" }}</span>
@@ -35,6 +35,7 @@ h2 {
   font-size: 32px;
   color: $tertiary;
   font-family: "Slabo 13px", serif;
+  text-shadow: 1px 1px 3px rgba(5, 5, 5, 0.45);
 }
 
 span {

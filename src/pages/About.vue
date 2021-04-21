@@ -6,10 +6,7 @@
       <img src="~/assets/SVG/woman.svg" alt="Sobre a Artista" />
       <TextCard
         title="A artista"
-        body="Maria Joana é uma cantora e dançarina brasileira Drag-Queen que apoia
-          o movimento LGBT. Atualmente está na Colômbia para alavancar sua
-          carreira Internacional, mas no momento o seu foco não está na parte
-          artistica e sim em cursos e vendas de produtos em gerais..."
+        :body="about.artist"
       />
     </div>
 
@@ -17,9 +14,7 @@
       <img src="~/assets/SVG/lgbt.svg" alt="Sobre LGBT" />
       <TextCard
         title="Movimento LGBT"
-        body="  O movimento LGBT é uma organização sem fins lucrativos que promove a
-          inclusão de pessoas LGBTI+ na sociedade com iniciativas de formação de
-          lideranças, pesquisa, conscientização e segurança."
+        :body="about.lgbt"
       />
     </div>
 
@@ -27,23 +22,34 @@
       <img src="~/assets/SVG/vegano.svg" alt="Sobre o veganismo" />
       <TextCard
         title="Veganismo"
-        body="     O veganismo é a prática de se abster do uso de produtos de origem
-          animal, procurando excluir, na medida do possível e praticável, o uso
-          de qualquer produto de origem animal, seja na alimentação ou no
-          vestuário. Um seguidor desta prática é conhecido como vegano, que é o
-          caso de Maria Joana."
+        :body="about.vegan"
       />
     </div>
   </q-page>
 </template>
 <script>
+import axios from 'axios'
 import TextCard from "src/components/global/TextCard.vue";
 import Title from "../components/global/Title";
 export default {
+  methods :{
+    async getAbout(){
+      const response = await axios.get('http://localhost:3000/about')
+      this.about =  response.data
+    }
+  },
+  mounted(){
+    this.getAbout()
+  },
   components: { Title, TextCard },
   data() {
     return {
-      text: ""
+      text: "", 
+      about: {
+        artist: "",
+        vegan: "",
+        lgbt: ""
+      }
     };
   }
 };

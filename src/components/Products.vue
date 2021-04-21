@@ -7,7 +7,7 @@
       transition-prev="slide-right"
       transition-next="slide-left"
       swipeable
-      :autoplay="2500"
+      :autoplay="3600"
       infinite
       draggable
       animated

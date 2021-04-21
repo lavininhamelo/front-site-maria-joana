@@ -3,7 +3,7 @@
     <Header id="header"></Header>
     <Products></Products>
     <Courses></Courses>
-    <Separator color="#fcf6ec"></Separator>
+    <Separator color="#fffdfa"></Separator>
     <Contact id="contact" />
   </q-page>
 </template>
