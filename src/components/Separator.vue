@@ -25,7 +25,7 @@ export default {
   width: 100%;
   height: 100px;
   background: url("~assets/bottom.svg");
-  background-size: 100%;
+  background-size: 100vw;
   background-position-y: bottom;
   background-repeat: no-repeat;
 }
@@ -33,7 +33,7 @@ export default {
   width: 100%;
   height: 100px;
   background: url("~assets/top.svg");
-  background-size: 100%;
+  background-size: 100vw;
   background-position-y: top;
 }
 </style>
