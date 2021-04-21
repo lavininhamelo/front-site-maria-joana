@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "email": "admin@mariajoana.com.br",
+      "password": 123123,
+      "photo_url": ""
+    }
+  ],
+  "contacts": {
+    "whatsapp": "9981898210",
+    "email": "contato@mariajoana.com.br"
+  },
+  "about": {
+    "artist": "A Maria Joana é uma cantora e dançarina brasileira Drag-Queen que apoia o movimento LGBT. Atualmente está na Colômbia para alavancar sua carreira Internacional, mas no momento o seu foco não está na parte artistica e sim em cursos e vendas de produtos em gerais...",
+    "lgbt": "O movimento LGBT é uma organização sem fins lucrativos que promove a inclusão de pessoas LGBTI+ na sociedade com iniciativas de formação de lideranças, pesquisa, conscientização e segurança...",
+    "vegan": "O veganismo é a prática de se abster do uso de produtos de origem animal, procurando excluir, na medida do possível e praticável, o uso de qualquer produto de origem animal, seja na alimentação ou no vestuário. Um seguidor desta prática é conhecido como vegano, que é o caso de Maria Joana."
+  },
+  "products": [
+    {
+      "title": "Produto 1",
+      "description": "That's the product 1",
+      "value": 40,
+      "qntd": 1
+    },
+    {
+      "title": "Produto 2",
+      "description": "That's the product 2",
+      "value": 40,
+      "qntd": 1
+    },
+    {
+      "title": "Produto 3",
+      "description": "That's the product 3",
+      "value": 40,
+      "qntd": 1
+    }
+  ],
+  "courses": [
+    {
+      "title": "Course 1",
+      "description": "That's the course 1",
+      "value": 40,
+      "qntd": 1
+    },
+    {
+      "title": "Course 2",
+      "description": "That's the course 2",
+      "value": 40,
+      "qntd": 1
+    },
+    {
+      "title": "Course 3",
+      "description": "That's the course 3",
+      "value": 40,
+      "qntd": 1
+    }
+  ]
+}

@@ -44,7 +44,7 @@
           <h2>WhatsApp</h2>
           <div class="row">
             <img src="~/assets/whatsapp.png" alt="whatsapp" class="q-mr-md" />
-            <span>(67) 9 9845-6657</span>
+            <span>{{contacts.whatsapp}}</span>
           </div>
         </div>
         <div class="q-mt-xl full-width  row justify-end">
@@ -56,6 +56,7 @@
 </template>
 
 <script>
+import axios from "axios"
 import Title from "./global/Title.vue";
 export default {
   components: { Title },
@@ -64,8 +65,21 @@ export default {
       name: "",
       subject: "",
       email: "",
-      message: ""
+      message: "",
+      contacts: {
+        whatsapp: "",
+        email: ""
+      }
     };
+  },
+  methods: {
+    async pegarContato() {
+       const response = await axios.get('http://localhost:3000/contacts')
+       this.contacts = response.data
+    }
+  },
+  mounted(){
+    this.pegarContato()
   }
 };
 </script>
