@@ -117,7 +117,7 @@ export default {
 
   methods: {
     async getAbout() {
-      const response = await axios.get("http://localhost:3000/about")
+      const response = await axios.get('http://localhost:3000/about')
       this.about = response.data
     }, 
     async editAbout() {
@@ -126,7 +126,7 @@ export default {
         lgbt: this.about.lgbt,
         vegan: this.about.vegan
       }
-      await axios.put("http://localhost:3000/about/", data)
+      await axios.put('http://localhost:3000/about/', data)
       this.lgbt = false;
       this.artist = false;
       this.vegan = false;

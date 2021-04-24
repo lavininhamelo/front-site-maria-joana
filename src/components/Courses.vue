@@ -16,31 +16,22 @@
       padding
       arrows
     >
-      <q-carousel-slide :name="1" class="column no-wrap">
+   
+      <q-carousel-slide v-for="(_,index) in getProductsByIndexLength()" :key="index" :name="index" class="column no-wrap">
         <div
           class="row fit justify-between items-center q-gutter-xs q-col-gutter no-wrap"
         >
-          <Card name="One Course 1" value="R$ 21,00"></Card>
-          <Card name="One Course 2" value="R$ 22,00"></Card>
-          <Card name="One Course 3" value="R$ 23,00"></Card>
-          <Card name="One Course 4" value="R$ 24,00"></Card>
+          <Card v-for=" product in getProductByIndex(index)" :name="`Teste + ${product}`" value="str" :key="product"/>
         </div>
       </q-carousel-slide>
-      <q-carousel-slide :name="2" class="column no-wrap">
-        <div
-          class="row fit justify-between items-center q-gutter-xs q-col-gutter no-wrap"
-        >
-          <Card name="One Course 5" value="R$ 25,00"></Card>
-          <Card name="One Course 6" value="R$ 26,00"></Card>
-          <Card name="One Course 7" value="R$ 27,00"></Card>
-          <Card name="One Course 8" value="R$ 28,00"></Card>
-        </div>
-      </q-carousel-slide>
+  
+      
     </q-carousel>
-    <q-btn color="primary" label="Ver todos" outline class="q-px-xl q-mb-lg" />
+    <q-btn color="primary" label="Ver todos" outline class="q-px-xl q-mb-lg" @click="getProductByIndex(3)" />
   </div>
 </template>
 <script>
+import { Screen } from 'quasar'
 import Title from "./global/Title.vue";
 import Card from "./global/Card.vue";
 export default {
@@ -48,10 +39,52 @@ export default {
   data() {
     return {
       slide: 1,
-      products: [1, 2, 3, 4, 5, 6]
+      products: [1, 2, 3, 4, 5, 6,7,8,9,10,11,12,13],
+     
+      getProductsByIndexLength: function(){
+  
+        const array = [...new Array(Math.ceil(this.products.length/this.quantityShown)).fill(1)]
+        return  array;
+       },
     };
+  },
+  watch:{
+   
+  },
+  computed:{ // da pra faezr this.$q.screen.width > 300 etc etc tmb
+  //eu queria fazer por breaking point ai ficava mais certo, mas vou tentar assim tb vc q sabe
+     quantityShown: ()=>{
+       console.log(Screen.name)
+      switch(Screen.name){
+        case "xs":
+       
+          return 1
+          break
+             case "sm":
+               return 2;
+               break;
+        case "md":
+          return 3;
+          break
+       default:
+          return 4;
+      }
+     }
+    
+  },
+  methods:{
+ getProductByIndex: function(i){
+   const start = i* this.quantityShown
+   const end = start + this.quantityShown
+   const arr = []
+   for (let index = start; index < end ; index++) {
+    if(this.products.length > start){
+      arr.push(this.products[index])
+     }  
+   }
+  return arr.filter((item)=>item!= null)
   }
-};
+}}
 </script>
 <style lang="scss" scoped>
 .courses {
