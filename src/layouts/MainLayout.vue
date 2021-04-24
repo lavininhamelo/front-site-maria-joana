@@ -1,16 +1,15 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <div class="flex w-full column justify-center ">
+    <div class=" flex w-full column justify-center ">
        <iframe
           src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3"
-          :width="getScreenSize()"
+          :width="getScreenSize()*0.988"
           height="80"
           frameborder="0"
           allowtransparency="true"
           allow="encrypted-media"
         ></iframe>
       <div class="top  w-full">
-       
         <Menu class="menu" />
       </div>
       <q-page-container>

@@ -51,7 +51,6 @@ a {
 }
 
 .menu {
-  background: $beige;
   display: flex;
   height: 60px;
   width: 100%;
