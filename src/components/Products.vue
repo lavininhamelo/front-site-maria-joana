@@ -1,6 +1,6 @@
 <template>
   <div class="products container full-width column items-center">
-    <Title title="Produtos" subtitle="os queridinhos"></Title>
+    <Title title="Produtos" subtitle="os mais procurados"></Title>
     <q-carousel
       flat
       v-model="slide"
@@ -16,42 +16,83 @@
       padding
       arrows
     >
-      <q-carousel-slide :name="1" class="column no-wrap">
+   
+      <q-carousel-slide v-for="(_,index) in getproductsByIndexLength()" :key="index" :name="index" class="column no-wrap">
         <div
           class="row fit justify-between items-center q-gutter-xs q-col-gutter no-wrap"
         >
-          <Card name="One Product 1" value="R$ 21,00"></Card>
-          <Card name="One Product 2" value="R$ 22,00"></Card>
-          <Card name="One Product 3" value="R$ 23,00"></Card>
-          <Card name="One Product 4" value="R$ 24,00"></Card>
+          <Card v-for=" product in getproductByIndex(index)" :name="product.name" :value="product.value" :key="product.id" :whatsapp="whatsapp"/>
         </div>
       </q-carousel-slide>
-      <q-carousel-slide :name="2" class="column no-wrap">
-        <div
-          class="row fit justify-between items-center q-gutter-xs q-col-gutter no-wrap"
-        >
-          <Card name="One Product 5" value="R$ 25,00"></Card>
-          <Card name="One Product 6" value="R$ 26,00"></Card>
-          <Card name="One Product 7" value="R$ 27,00"></Card>
-          <Card name="One Product 8" value="R$ 28,00"></Card>
-        </div>
-      </q-carousel-slide>
+  
+      
     </q-carousel>
-    <q-btn color="primary" label="Ver todos" outline class="q-px-xl q-mb-lg" />
+    <q-btn color="primary" label="Ver todos" outline class="q-px-xl q-mb-lg" @click="getproductByIndex(3)" />
   </div>
 </template>
 <script>
+import { Screen } from 'quasar'
 import Title from "./global/Title.vue";
 import Card from "./global/Card.vue";
 export default {
   components: { Card, Title },
+  props: {
+    data: {
+      type: Array
+    },
+     whatsapp: {
+      type: String || Number
+    },
+  },
   data() {
     return {
       slide: 1,
-      products: [1, 2, 3, 4, 5, 6]
+      products: this.data,
+     
+      getproductsByIndexLength: function(){
+  
+        const array = [...new Array(Math.ceil(this.products.length/this.quantityShown)).fill(1)]
+        return  array;
+       },
     };
+  },
+  watch:{
+   
+  },
+  computed:{ // da pra faezr this.$q.screen.width > 300 etc etc tmb
+  //eu queria fazer por breaking point ai ficava mais certo, mas vou tentar assim tb vc q sabe
+     quantityShown: ()=>{
+       console.log(Screen.name)
+      switch(Screen.name){
+        case "xs":
+       
+          return 1
+          break
+             case "sm":
+               return 2;
+               break;
+        case "md":
+          return 3;
+          break
+       default:
+          return 4;
+      }
+     }
+    
+  },
+  methods:{
+ getproductByIndex: function(i){
+   const start = i* this.quantityShown
+   const end = start + this.quantityShown
+   const arr = []
+   for (let index = start; index < end ; index++) {
+    if(this.products.length > start){
+      arr.push(this.products[index])
+     }  
+   }
+  return arr.filter((item)=>item!= null)
   }
-};
+}}
 </script>
 <style lang="scss" scoped>
 .products {

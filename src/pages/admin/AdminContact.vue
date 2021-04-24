@@ -36,11 +36,30 @@ export default {
   },
   methods: {
     async alterarContato(){
+
+        this.$q
+        .dialog({
+          title: "Alterar esse dado?",
+          message: "Você deseja realmente alterar esse dado?",
+          cancel: true,
+          persistent: true,
+        })
+        .onOk(async () => {
+         
         const data = {
           whatsapp: this.contacts.whatsapp,
           email: this.contacts.email
         }
         await axios.put('http://localhost:3000/contacts', data)
+         this.$q.notify({
+          color: 'positive',
+          message: "Ação realizada com sucesso"
+        })
+        })
+        .onCancel(() => {
+          // console.log('>>>> Cancel')
+        });
+      
     }
   }
 };

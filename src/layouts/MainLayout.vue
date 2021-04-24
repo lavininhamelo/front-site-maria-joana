@@ -52,7 +52,7 @@ export default {
   methods: {
     getScreenSize() {
       return this.$q.screen.width;
-    }
+    },
   }
 };
 </script>

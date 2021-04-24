@@ -34,11 +34,10 @@
 							<img :src="props.row.cover" height="60" />
 						</q-td>
 						<q-td key="name" :props="props">{{ props.row.name }}</q-td>
-						<q-td key="nameTeacher" :props="props">{{ props.row.nameTeacher}}</q-td>
 						<q-td key="description" :props="props">{{ props.row.description }}</q-td>
-						<q-td key="hours" :props="props">{{ props.row.hours }}</q-td>
-
-						<q-td key="value"  :props="props">{{ props.row.value }}</q-td>
+						<q-td key="nameTeacher" :props="props">{{ props.row.nameTeacher}}</q-td>
+						<q-td key="hours" :props="props">{{ props.row.hours }} CH</q-td>
+						<q-td key="value"  :props="props">  R${{ props.row.value }}</q-td>
 						<q-td key="actions" :props="props">
 							<div class="row">
 								<q-btn
@@ -59,7 +58,8 @@
 			<q-dialog v-model="dialog">
 				<q-card style="min-width: 320px; width: 60%">
 					<q-card-section class="row items-center q-pb-none">
-						<div class="text-h6">Adicionar Curso</div>
+						<div class="text-h6" v-if="!courses.id">Adicionar Curso</div>
+						<div class="text-h6" v-else>Editar Curso</div>
 						<q-space />
 						<q-btn icon="close" flat round dense v-close-popup />
 					</q-card-section>
@@ -98,7 +98,8 @@
 							color="primary"
 							v-model="courses.value"
 							square
-							type="text"
+						              type="number"
+
 							label="Valor"
 						/>
 						<q-input
@@ -174,6 +175,7 @@ export default {
 					name: "description",
 					required: true,
 					label: "Descrição",
+					field: "description",
 					align: "left",
 					sortable: true
 				},
@@ -203,7 +205,7 @@ export default {
 					description: "bla bla bla bla",
 					name: "Anel de coco",
 					hours: 12,
-					value: "R$ 12,00"
+					value: "12,00"
 				},
 				{
 					id: 1,
@@ -213,7 +215,7 @@ export default {
 					description: "bla bla bla bla",
 					name: "Colar trançado biju",
 					hours: 13,
-					value: "R$ 15,00"
+					value: "15,00"
 				},
 				{
 					id: 1,
@@ -223,7 +225,7 @@ export default {
 					description: "bla bla bla bla",
 					name: "Kit miçanga",
 					hours: 23,
-					value: "R$ 42,00"
+					value: "42,00"
 				},
 				{
 					id: 1,
@@ -233,7 +235,7 @@ export default {
 					description: "bla bla bla bla",
 					name: "Pulseira",
 					hours: 15,
-					value: "R$ 8,00"
+					value: "8,00"
 				}
 			]
 		};
@@ -261,6 +263,11 @@ methods: {
       const response = await axios.post('http://localhost:3000/courses', data)
       if(response.status === 201){
         this.getAllCourses()
+				this.dialog = false
+				   this.$q.notify({
+          color: 'positive',
+          message: "Ação realizada com sucesso"
+        })
       }
     },
      async editCourse(id) {
@@ -268,6 +275,10 @@ methods: {
 			 data.cover = 'https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
       const response = await axios.put('http://localhost:3000/courses/'+id, data)
       if(response.status === 200){
+				this.$q.notify({
+					color: "positive",
+					message: "Ação realizada com sucesso!"
+				})
            this.courses =   {
         name: "",
         qtd:"",
@@ -287,6 +298,10 @@ methods: {
       }).onOk(async () => {
         const response = await axios.delete('http://localhost:3000/courses/'+id)
         if(response.status === 200){
+					this.$q.notify({
+						color: "positive",
+						message: "Ação realizada com sucesso!"
+					})
           this.getAllCourses()
         }
       }).onCancel(() => {
@@ -295,19 +310,26 @@ methods: {
       
     },  
      async getAllCourses() {
+
       const response = await axios.get('http://localhost:3000/courses')
       if(response.status === 200){
+			
        this.data = response.data
       }
+			this.$q.loading.hide()
+
     },  
      async getCourse(id) {
       const response = await axios.get('http://localhost:3000/courses/'+id)
       if(response.status === 200){
+			
       }
     },  
     
     },mounted(){
+			this.$q.loading.show()
     this.getAllCourses()
+		
   },
 };
 </script>

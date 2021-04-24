@@ -1,24 +1,12 @@
 <template>
-<<<<<<< HEAD
-  <header class="column justify-between">
-    <p></p>
-   <div class="column flex-center">
-      <h1>Maria Joana</h1>
-=======
   <header class="column ">
     <h1>Maria Joana</h1>
->>>>>>> c869f3c5213aedbce05cb6eef4e60729eb1a8c75
     <img src="~/assets/linha.png" alt="linha" />
     <span>Dança e artesanato</span>
     <div class="botao-catalogo" @click="go('/produtos')">
       <q-btn class="botao" color="primary" label="Ver Catálogo"  />
     </div>
-<<<<<<< HEAD
-   </div>
-    <Separator bottom></Separator>
-=======
     <Separator class="self-end" bottom></Separator>
->>>>>>> c869f3c5213aedbce05cb6eef4e60729eb1a8c75
   </header>
 </template>
 
@@ -46,11 +34,8 @@ span {
   margin: 16px 0px;
 }
 header {
-<<<<<<< HEAD
-=======
   padding-top: 36px;
   padding-bottom: 0px;
->>>>>>> c869f3c5213aedbce05cb6eef4e60729eb1a8c75
   width: 100%;
   display: flex;
   flex-direction: column;

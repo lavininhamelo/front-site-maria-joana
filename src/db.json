@@ -7,52 +7,134 @@
     }
   ],
   "contacts": {
-    "whatsapp": "9981898210",
+    "whatsapp": "21551933820",
     "email": "contato@mariajoana.com.br"
   },
   "about": {
-    "artist": "A Maria Joana é uma cantora e dançarina brasileira Drag-Queen que apoia o movimento LGBT. Atualmente está na Colômbia para alavancar sua carreira Internacional, mas no momento o seu foco não está na parte artistica e sim em cursos e vendas de produtos em gerais...",
+    "artist": "A Maria Joana é uma cantora e dançarina brasileira Drag-Queen que apoia o movimento LGBT. Atualmente está na Colômbia para alavancar sua carreira Internacional, mas no momento o seu foco não está na parte artistica e sim em cursos e vendas de produtos em gerais.",
     "lgbt": "O movimento LGBT é uma organização sem fins lucrativos que promove a inclusão de pessoas LGBTI+ na sociedade com iniciativas de formação de lideranças, pesquisa, conscientização e segurança...",
     "vegan": "O veganismo é a prática de se abster do uso de produtos de origem animal, procurando excluir, na medida do possível e praticável, o uso de qualquer produto de origem animal, seja na alimentação ou no vestuário. Um seguidor desta prática é conhecido como vegano, que é o caso de Maria Joana."
   },
   "products": [
     {
-      "title": "Produto 1",
-      "description": "That's the product 1",
-      "value": 40,
-      "qntd": 1
+      "id": 3,
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Kit miçanga",
+      "description": "Bla bla bla bla bla",
+      "qtd": 23,
+      "value": "185.00"
     },
     {
-      "title": "Produto 2",
-      "description": "That's the product 2",
-      "value": 40,
-      "qntd": 1
+      "id": 1,
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Anel de coco",
+      "description": "Bla bla bla bla bla",
+      "qtd": 12,
+      "value": "50.00"
     },
     {
-      "title": "Produto 3",
-      "description": "That's the product 3",
-      "value": 40,
-      "qntd": 1
+      "id": 4,
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Pulseira",
+      "description": "Bla bla bla bla bla",
+      "qtd": 15,
+      "value": "23"
+    },
+    {
+      "name": "Teste",
+      "qtd": "75",
+      "value": "21.90",
+      "description": "teste",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "id": 5
+    },
+    {
+      "name": "Outro Teste",
+      "qtd": "25",
+      "value": "80",
+      "description": "Fechar",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "id": 6
+    },
+    {
+      "name": "Um Produto",
+      "qtd": "3",
+      "value": "33",
+      "description": "33333",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "id": 7
+    },
+    {
+      "name": "Mais um teste",
+      "qtd": "34",
+      "value": "25.00",
+      "description": "agora vai",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "id": 8
+    },
+    {
+      "name": "Mais um teste",
+      "qtd": "34",
+      "value": "25.00",
+      "description": "agora vai",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "id": 9
     }
   ],
   "courses": [
     {
-      "title": "Course 1",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Course 1",
+      "nameTeacher": "Maria Joana",
       "description": "That's the course 1",
       "value": 40,
-      "qntd": 1
+      "hours": "45",
+      "id": 1
     },
     {
-      "title": "Course 2",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Course 2",
+      "nameTeacher": "Maria Joana",
       "description": "That's the course 2",
       "value": 40,
-      "qntd": 1
+      "hours": 1,
+      "id": 2
     },
     {
-      "title": "Course 3",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Course 3",
+      "nameTeacher": "Maria Joana",
       "description": "That's the course 3",
       "value": 40,
-      "qntd": 1
+      "hours": 1,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Teste",
+      "hours": "12",
+      "value": "85.00",
+      "description": "TEste",
+      "nameTeacher": "Joaquim",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+      "id": 5,
+      "name": "Curso Muito Foda ",
+      "hours": "80",
+      "value": "250.00",
+      "description": "Você performando toda linda!",
+      "nameTeacher": "Maria Joana",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+      "id": 6,
+      "name": "Curso de Canto",
+      "hours": "200",
+      "value": "500.00",
+      "description": "Pra você aprender a cantar de uma vez por todas.",
+      "nameTeacher": "Maria Joana",
+      "cover": "https://images.unsplash.com/photo-1619013971034-a2c9e56fdb6d?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
     }
   ]
 }

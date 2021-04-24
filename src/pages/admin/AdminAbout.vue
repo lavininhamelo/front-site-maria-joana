@@ -121,6 +121,7 @@ export default {
       this.about = response.data
     }, 
     async editAbout() {
+      
       const data = {
         artist: this.about.artist,
         lgbt: this.about.lgbt,
@@ -130,6 +131,10 @@ export default {
       this.lgbt = false;
       this.artist = false;
       this.vegan = false;
+       this.$q.notify({
+          color: 'positive',
+          message: "Ação realizada com sucesso"
+        })
     }
   },
   mounted() {

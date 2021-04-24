@@ -3,7 +3,7 @@
     <Title :title="'Produtos'" class="q-mt-lg" />
     <div class="row full-width justify-center q-my-lg">
       <div class="q-px-lg " v-for="(product, index) in products" :key="index">
-        <Card :name="product.name" :value="product.value"> </Card>
+        <Card  :key="whatsapp" :name="product.name" :value="product.value" :whatsapp="whatsapp"> </Card>
       </div>
     </div>
   </div>
@@ -20,18 +20,24 @@ export default {
   },
   data() {
     return {
-      products: []
+      products: [],
+      whatsapp: '61991577460'
     };
   },
   methods: {
-    async getAllProducts() {
+    async getAllproducts() {
       const response = await axios.get("http://localhost:3000/products");
       console.log(response);
       this.products = response.data;
+    },
+     async getWhatsapp(){
+      const response = await axios.get("http://localhost:3000/contacts");
+      this.whatsapp = response.data.whatsapp
     }
   },
   mounted() {
-    this.getAllProducts();
+    this.getAllproducts();
+    this.getWhatsapp()
   }
 };
 </script>

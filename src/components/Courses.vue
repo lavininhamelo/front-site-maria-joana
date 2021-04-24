@@ -17,17 +17,17 @@
       arrows
     >
    
-      <q-carousel-slide v-for="(_,index) in getProductsByIndexLength()" :key="index" :name="index" class="column no-wrap">
+      <q-carousel-slide v-for="(_,index) in getcoursesByIndexLength()" :key="index" :name="index" class="column no-wrap">
         <div
           class="row fit justify-between items-center q-gutter-xs q-col-gutter no-wrap"
         >
-          <Card v-for=" product in getProductByIndex(index)" :name="`Teste + ${product}`" value="str" :key="product"/>
+          <Card v-for=" course in getcourseByIndex(index)" :name="course.name" :value="course.value" :key="course.id" :whatsapp="whatsapp"/>
         </div>
       </q-carousel-slide>
   
       
     </q-carousel>
-    <q-btn color="primary" label="Ver todos" outline class="q-px-xl q-mb-lg" @click="getProductByIndex(3)" />
+    <q-btn color="primary" label="Ver todos" outline class="q-px-xl q-mb-lg" @click="getcourseByIndex(3)" />
   </div>
 </template>
 <script>
@@ -36,14 +36,22 @@ import Title from "./global/Title.vue";
 import Card from "./global/Card.vue";
 export default {
   components: { Card, Title },
+  props: {
+    data: {
+      type: Array
+    },
+     whatsapp: {
+      type: String || Number
+    },
+  },
   data() {
     return {
       slide: 1,
-      products: [1, 2, 3, 4, 5, 6,7,8,9,10,11,12,13],
+      courses: this.data,
      
-      getProductsByIndexLength: function(){
+      getcoursesByIndexLength: function(){
   
-        const array = [...new Array(Math.ceil(this.products.length/this.quantityShown)).fill(1)]
+        const array = [...new Array(Math.ceil(this.courses.length/this.quantityShown)).fill(1)]
         return  array;
        },
     };
@@ -73,13 +81,13 @@ export default {
     
   },
   methods:{
- getProductByIndex: function(i){
+ getcourseByIndex: function(i){
    const start = i* this.quantityShown
    const end = start + this.quantityShown
    const arr = []
    for (let index = start; index < end ; index++) {
-    if(this.products.length > start){
-      arr.push(this.products[index])
+    if(this.courses.length > start){
+      arr.push(this.courses[index])
      }  
    }
   return arr.filter((item)=>item!= null)

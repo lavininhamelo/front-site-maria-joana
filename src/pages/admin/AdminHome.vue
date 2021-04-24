@@ -1,8 +1,8 @@
-<template>
+<template class="pagina">
   <q-page class="flex column flex-center index">
-    <span class="text-bold text-h2">Área de Administração</span>
+    <span class="text-bold text-h2 texto">Área de Administração</span>
     <p class="q-mt-md">Escolha qual area você deseja gerenciar</p>
-    <div class="row wrap q-mt-xl ">
+    <div class="row wrap q-mt-xl quadrado">
      
       <span class="btn-opt" @click="go('sobre')">
         <q-icon name="feed" class="q-mb-sm" size="1.5rem" />
@@ -45,7 +45,7 @@ export default {
       },
 }
 import Header from 'src/components/admin/Header.vue'
-</script>primary
+</script>
 <style lang="scss" scoped>
 .index {
   width: 100%;
@@ -69,5 +69,24 @@ import Header from 'src/components/admin/Header.vue'
   cursor: pointer;
 
   }
+}
+
+@media (max-width: 414px) {
+  .quadrado {
+    justify-content: center;
+
+  }
+  .pagina {
+    padding: 16px;
+  }
+  .texto {
+    font-size: 24px;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+
+
 }
 </style>

@@ -1,9 +1,12 @@
 <template>
  <q-layout class="bg" view="hHh lpR fFf" >
 
+    <q-btn color="primary" icon="menu" flat  @click="left = !left" />
+
     <q-drawer show-if-above v-model="left" side="left"  >
       <MenuLateral />
     </q-drawer>
+
 
     <q-page-container>
       <router-view />
