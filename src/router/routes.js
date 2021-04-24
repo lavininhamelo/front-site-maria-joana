@@ -18,7 +18,15 @@ const routes = [
       { path: "sobre", name: "admin-sobre", component: () => import("src/pages/admin/AdminAbout.vue") },
       { path: "produtos", name: "admin-produtos",component: () => import("src/pages/admin/AdminProducts.vue") },
       { path: "cursos", name: "admin-cursos",component: () => import("src/pages/admin/AdminCourses.vue") },
-      { path: "contatos", name: "admin-contatos", component: () => import("src/pages/admin/AdminContact.vue") }
+      { path: "contatos", name: "admin-contatos", component: () => import("src/pages/admin/AdminContact.vue") },
+      
+    ]
+  },
+  {
+    path: "/adm",
+    component: () => import("layouts/AdminLoginLayout.vue"),
+    children: [
+      { path: "login", name: "admin-login", component: () => import("src/pages/admin/AdminLogin.vue") }
     ]
   },
 
@@ -31,3 +39,5 @@ const routes = [
 ];
 
 export default routes;
+
+      

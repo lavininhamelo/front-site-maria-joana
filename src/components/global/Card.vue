@@ -58,7 +58,7 @@ export default {
       type: String
     },
     whatsapp: {
-      type: String,
+     type: String,
       default: "+5561991577460"
     }
   },

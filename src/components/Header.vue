@@ -1,12 +1,12 @@
 <template>
-  <header>
+  <header class="column ">
     <h1>Maria Joana</h1>
     <img src="~/assets/linha.png" alt="linha" />
     <span>Dança e artesanato</span>
     <div class="botao-catalogo" @click="go('/produtos')">
       <q-btn class="botao" color="primary" label="Ver Catálogo" />
     </div>
-    <Separator bottom></Separator>
+    <Separator class="self-end" bottom></Separator>
   </header>
 </template>
 
@@ -34,6 +34,7 @@ span {
 }
 header {
   padding-top: 36px;
+  padding-bottom: 0px;
   width: 100%;
   display: flex;
   flex-direction: column;

@@ -1,6 +1,6 @@
 <template>
   <div
-    :style="`background-color: ${color}`"
+    :style="`background-color: ${color}; height: ${$q.screen.width > 1366 ? 150:100}px`"
     class="separator"
     :class="bottom ? 'top' : 'bottom'"
   ></div>
@@ -23,17 +23,17 @@ export default {
 <style lang="scss" scoped>
 .bottom {
   width: 100%;
-  height: 100px;
   background: url("~assets/bottom.svg");
-  background-size: 100vw;
+  background-size: 100%;
   background-position-y: bottom;
   background-repeat: no-repeat;
 }
 .top {
   width: 100%;
-  height: 100px;
   background: url("~assets/top.svg");
-  background-size: 100vw;
+  background-size: 100%;
   background-position-y: top;
+  background-repeat: no-repeat;
+
 }
 </style>

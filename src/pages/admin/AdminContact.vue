@@ -40,7 +40,7 @@ export default {
           whatsapp: this.contacts.whatsapp,
           email: this.contacts.email
         }
-        await axios.put("http://localhost:3000/contacts", data)
+        await axios.put('http://localhost:3000/contacts', data)
     }
   }
 };
